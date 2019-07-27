@@ -1,0 +1,55 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Resume"
+ :layout :page
+ :navbar? true
+ :tags   ["resume" "experience"]}
+
+* Justin Good
+** Info
+- justin@jgood.io
+- 616 516 2311
+- https://jgood.io
+- https://github.com/jgoodhcg
+- https://www.linkedin.com/in/jgoodhcg
+- Grand Rapids, Michigan
+** Experience
+*** Full Stack Developer, Gordon Food Service
+/2018-05-14--Present/
+- Implemented ci/cd + git ops with Jenkins, k8s, and github
+- Launched React Native (expo) app with a Kotlin + Spring Boot backend
+- Integrated app with legacy services across
+- Onboarded several developers to the project
+*** Software Dev Contractor, Tek Systems
+/2017-05-11--2018-05-14/
+- Developed green field content management solution for targeted advertising to customers
+- Fixed bugs, added features and modules to a Drupal CMS site for internal company news and communication
+*** Web Developer, One Stop Inc
+/2016-02-18--2017-05-19/
+- Created an isolated, reproducible, build script for production and development
+- Maintained and extended e-commerce php app and supporting applications
+*** IT Intern, City of Wyoming
+/2015-5-19--2015-11-13/
+- Developed CRUD web app for internal use
+- Introduced version control to small dev team
+** Side Projects
+*** Time Align Mobile
+/2018-05-12--present/
+
+A native app using Expo and React Native, written in Clojurescript (shadow-cljs). 
+This app is an endeavor to deliver a Minimum Viable Product while optimizing for time (/its a little messy/).
+** Education
+*** B.S. in Computer Science, Grand Valley State University
+/2012--2015/
+** Favorite Tech
+*** Clojure(script)
+Data driven, immutable, mostly pure functions, and *simple*.
+After [[https://www.infoq.com/presentations/Simple-Made-Easy][simple made easy]] I was curious. 
+Then after [[https://github.com/Day8/re-frame][the re-frame readme]] I was hooked.
+*** Docker 
+Containerized environments are in.
+Reproducible, declarative, ephemeral is where its at. 
+Containerization should be used from development to production.
+I've spent _alot_ of time trying to make it work for development with  mixed results.
+*** Spacemacs
+Slowly realizing my life could run in org mode and emacs.
+   
