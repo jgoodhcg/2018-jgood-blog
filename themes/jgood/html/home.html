@@ -8,9 +8,13 @@
     </div>
     {% endif %}
 
-    {% with prev=post.prev next=post.next%}
-    {% include "/html/prev-next.html" %}
-    {% endwith %}
-
+    <div id="prev-next">
+        {% if post.prev %}
+        <a href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
+        {% endif %}
+        {% if post.next %}
+        <a class="right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

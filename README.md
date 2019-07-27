@@ -1,1 +1,4 @@
-jgood-blog
+# Development
+```
+lein ring server
+```

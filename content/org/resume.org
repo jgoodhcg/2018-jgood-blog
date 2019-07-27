@@ -17,7 +17,7 @@
 /2018-05-14--Present/
 - Implemented ci/cd + git ops with Jenkins, k8s, and github
 - Launched React Native (expo) app with a Kotlin + Spring Boot backend
-- Integrated app with legacy services across
+- Integrated app with legacy services 
 - Onboarded several developers to the project
 *** Software Dev Contractor, Tek Systems
 /2017-05-11--2018-05-14/
