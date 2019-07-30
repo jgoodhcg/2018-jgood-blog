@@ -10,7 +10,7 @@ lein ring server
     (key-combo org ", e e g G"))
 
   (defn write-to-md-content [export-buffer]
-    (key-combo export-buffer ":w ../md/$TYPE/$DATE$FILE_NAME"))
+    (key-combo export-buffer ":w ../../md/$TYPE/$DATE$FILE_NAME"))
 
   (-> org-post
       export-md
