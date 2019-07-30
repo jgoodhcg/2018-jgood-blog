@@ -1,5 +1,0 @@
-{:title "Everything I've eaten in the past year" :layout :post :tags []}
-
-# Coming soon
-
-Awesome data visualizations

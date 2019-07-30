@@ -1,5 +1,0 @@
-{:title "I've been working on the same project for 6 years without launching" :layout :post :tags []}
-
-# Coming soon
-
-More words
