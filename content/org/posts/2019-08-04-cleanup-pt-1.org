@@ -1,0 +1,22 @@
+* Cleaning up my codebase pt 1
+  :LOGBOOK:
+  CLOCK: [2019-08-04 Sun 13:44]--[2019-08-04 Sun 13:47] =>  0:03
+  :END:
+** Project
+*** Intro
+*** Setup
+*** Issues
+**** REPL isn't perfect 
+**** No docs
+**** No specs
+**** No tests
+**** Not DRY
+**** Disorganized view code
+** Step 1 - Spec it
+*** Ghostwheel looks cool 
+**** How its cool 
+**** Why it won't work for this
+*** Back to basics
+**** How does spec actually work?
+**** How does this project get value
+**** Ready Set Implement
