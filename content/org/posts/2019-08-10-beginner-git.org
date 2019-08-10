@@ -1,0 +1,65 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Git from the ground up"
+ :layout :post
+ :tags   [tutorial]}
+
+* Git from the ground up
+  :LOGBOOK:
+  CLOCK: [2019-08-10 Sat 12:31]--[2019-08-10 Sat 12:57] =>  0:26
+  :END:
+** Version Control
+
+*** What is it 
+*** Why is it used
+*** It should be spreading
+
+** Download stuff
+
+*** Checking if you have git via command line
+*** Installing git kraken
+
+** Big picture
+
+*** Local file system
+*** Git keeps track of changes
+*** The tree is essentially save points
+*** Everything you can do in git kraken can be done on the command line 
+
+** Make a repo
+
+*** Git init
+*** Open in git kraken
+*** Open a text editor and make a file
+*** Check that the pending change is in gitk
+*** Stage it
+*** Make another change
+*** Stage that one too
+*** Unstage it all
+*** Restage it all
+*** Make a message and commit
+
+** Remote repos
+
+*** Make a remote for your local
+
+**** Make a project on github
+**** Set it as a remote
+**** Push to it
+
+*** Make a local for a remote 
+
+**** Make a project on github
+**** Clone it
+**** Load it in gitk
+**** Push to it
+** Open source flow
+*** Fork a repo
+**** I'll have one made for this
+*** Make a change
+*** Commit it to fork
+*** Make a pull request
+*** Wait
+*** Pull changes
+*** Rebasing vs Merging
+**** Rebase a branch
+**** Merge a branch
