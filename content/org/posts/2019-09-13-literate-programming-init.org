@@ -1,0 +1,87 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Setting up a literate programming blog with Cryogen, Spacemacs, Org Mode, and Clojure"
+ :layout :post
+ :tags   [tutorial cryogen spacemacs org clojure]}
+ 
+* Literate Programming
+  :LOGBOOK:
+  CLOCK: [2019-09-14 Sat 10:54]--[2019-09-14 Sat 12:18] =>  1:24
+  CLOCK: [2019-09-13 Fri 22:00]--[2019-09-13 Fri 23:50] =>  1:50
+  :END:
+ 
+** Brainstorm - 1
+*** First try
+  - Read [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html#org0e038e7][this]]
+  - Figured my spacemacs setups with clojure layer gave me all the pre-reqs
+  - Only added this ~(setq org-babel-clojure-backend 'cider)~ to my /.spacemacs/ file
+  - Tried to execute a block with ~C-c C-c~ and it failed with a warning /evaluation of code blocks is disabled/
+
+*** Second try 
+ - Found [[https://github.com/syl20bnr/spacemacs/issues/7641][this issue]]
+ - After skimming threw in [[https://github.com/syl20bnr/spacemacs/issues/7641#issuecomment-446436283][this suggestion]] (replacing /python/ with /clojure/) from issue comments and removed previous ~setq~ line
+ - Now code block executions work with ~C-c C-c~ and ~M-x org-babel-execute-src-block~
+ - Buuuuuut all results are prefixed with ~nil~
+ - I guess I can do ~:results output~ and ~prn~ everything I want to show
+ 
+*** Examples 
+   #+begin_src clojure
+   (+ 1 1)
+   #+end_src
+
+   #+RESULTS:
+   : nil2
+
+   #+begin_src clojure :results output
+   (prn (+ 1 1))
+   #+end_src
+
+   #+RESULTS:
+   : 2
+
+#+begin_src clojure :results output
+  (use '(incanter core charts pdf))
+  ;;; Create the x and y data:
+  (def x-data [0.0 1.0 2.0 3.0 4.0 5.0])
+  (def y-data [2.3 9.0 2.6 3.1 8.1 4.5])
+  (def xy-line (xy-plot x-data y-data))
+  (view xy-line)
+  (save xy-line "./content/img/incanter-xy-line.png")
+#+end_src
+
+#+RESULTS:
+
+#+CAPTION: A basic x-y line plot
+#+NAME: fig:xy-line
+[[./../../img/incanter-xy-line.png]]
+
+
+** Brainstorm - 2
+
+*** A wonderful world 
+A place that I can go and /easily/
+- Write code to share solutions to interesting problems
+- Write code to generate data visualizations
+- Use illustrations
+- Write in historically lossless way
+- Keep time metrics
+- Publish easily
+- Use clojure
+
+*** Org mode is awesome
+Keybindings, exports, time tracking.
+
+*** Clojure is awesome
+
+*** Spacemacs was easy
+
+*** Cyrogen was easy
+
+*** Flow
+- Create an org file with some configuration
+- Start writing and logging time
+- Commit each session to git
+- Use cider and src blocks to effortlessly write code that /does something/ right in the doc
+- Add images
+- Export to markdown
+- Push export to repo
+    
