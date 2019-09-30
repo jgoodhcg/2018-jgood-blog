@@ -5,24 +5,42 @@
  
 * WSJF in Org mode
   :LOGBOOK:
+  CLOCK: [2019-09-30 Mon 19:12]--[2019-09-30 Mon 19:34] =>  0:22
+  CLOCK: [2019-09-30 Mon 19:05]--[2019-09-30 Mon 19:12] =>  0:07
   CLOCK: [2019-09-30 Mon 19:00]--[2019-09-30 Mon 19:04] =>  0:04
   CLOCK: [2019-09-30 Mon 15:48]--[2019-09-30 Mon 16:36] =>  0:48
   :END:
+ 
+** Context 
+I use an org mode document in my personal projects. It's were I keep all my notes and project planning. It looks kind of like this.
+#+begin_src
+#+TODO: TODO DOSUB | DONE CANCELED # these are the states I like to work with for tasks
 
-** WSJF 
-   Prioritizing based on value / effort.
-   
-** Org mode project tracking
-  
-*** Lives with the repo
-  Versioned 
-*** Time logging
-*** Column views 
-  Quick edit of value and effort.
-  
-** Adding WSJF
-  - Add properties definitions
-  - Add values quickly with column view
-  - Make a table using https://orgmode.org/worg/org-contrib/org-collector.html
-  - Link the item name
-  - Sort by the derived priority value
+* Project Name
+** Some really
+** DOSUB High level goals
+*** DOSUB These are sub goals 
+**** TODO This is probably something I will do in a sitting or three  
+     - [ ] It has
+     - [ ] Some checklists
+***** And maybe a section that describes somethign difficult that I had to do  
+      Could have lots of text and links in here.
+#+end_src
+
+This has been working well. Time logging is all in one place. Notes and things stay versioned with my project. And each commit can include an edit to this file with all the relevant information to act as documentation.
+
+Sometimes there gets to be lots of things to do at various levels and It's hard to scan the list every time I'm looking to do something new. 
+
+At my day job we use an agile method called Weighted Shortest Job First. The actual implementation in agile methodology is a little too involved so I've simplified it to.
+#+begin_src latex
+ \frac{value}{effort}
+#+end_src
+When time is a limiting factor /(when isn't it)/ this is a good prioritizing function.
+
+Anything that is an actionable item in my list of things to do gets those two properties. Then I use an org mode module to make a sorted table of links to those items. I can re-generate and re-score whenever I am looking for the next thing to do.
+
+** Implementation 
+
+*** Add the package
+*** Set up the document
+*** Do these things
