@@ -1,0 +1,27 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Implementing WSJF style prioritizing in org mode project document"
+ :layout :post
+ :tags   [org agile wsjf prioritizing]}
+ 
+* WSJF in Org mode
+  :LOGBOOK:
+  CLOCK: [2019-09-30 Mon 15:48]--[2019-09-30 Mon 16:36] =>  0:48
+  :END:
+
+** WSJF 
+   Prioritizing based on value / effort.
+   
+** Org mode project tracking
+  
+*** Lives with the repo
+  Versioned 
+*** Time logging
+*** Column views 
+  Quick edit of value and effort.
+  
+** Adding WSJF
+  - Add properties definitions
+  - Add values quickly with column view
+  - Make a table using https://orgmode.org/worg/org-contrib/org-collector.html
+  - Link the item name
+  - Sort by the derived priority value
