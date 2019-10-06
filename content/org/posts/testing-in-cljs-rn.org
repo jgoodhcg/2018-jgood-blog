@@ -1,0 +1,37 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Testing in CLJS React Native with Expo and Jest"
+ :layout :post
+ :tags   [test cljs react native expo jest]}
+ 
+* Initial outline
+  :LOGBOOK:
+  CLOCK: [2019-10-06 Sun 17:21]--[2019-10-06 Sun 17:37] =>  0:16
+  :END:
+
+** Project context 
+   I've built up this /organic/ project for awhile.
+   It's pretty hairy at this point but I don't want to start over.
+   I need some tests to keep from making regressions.
+   Handlers in /re-frame/ seem like a high value testing target.
+   Skipp to the GOOD PART LINK HERE.
+   
+** Failed attempt
+   Shadow-cljs target ~:node-test~.
+   Didn't work because of react-native dependencies in my deps tree.
+   Too much work to isolate the functions I wanted to test. Would have been possible.
+   Next time I'll keep this in mind.
+   
+** Successful attempt with some caveats
+   Using this PR recommended by thheller.
+   The PR example works and so did a basic example in my codebase.
+   Including the namespaces I want to test is what causes some problems.
+   For some reason ~watch~ and ~compile~ compiled code cause a js heap limit error when running jest.
+   Code compiled with ~release~ works.
+   But any meaningful compiler options to make the tests better break with different run time errors.
+    
+** Final state
+  Only compile with ~release~.
+  Use an interpceptor to generate the tests.
+  Verify tests are generated from a working user generated scenario.
+  From now on I will use these tests to catch regressions.
+  Then I will use the interpectors to generate new tests or write them by hand.

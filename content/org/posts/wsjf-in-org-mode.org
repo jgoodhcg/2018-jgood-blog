@@ -13,19 +13,12 @@
  
 ** Context 
 I use an org mode document in my personal projects. It's were I keep all my notes and project planning. It looks kind of like this.
-#+begin_src
-#+TODO: TODO DOSUB | DONE CANCELED # these are the states I like to work with for tasks
 
-* Project Name
-** Some really
-** DOSUB High level goals
-*** DOSUB These are sub goals 
-**** TODO This is probably something I will do in a sitting or three  
-     - [ ] It has
-     - [ ] Some checklists
-***** And maybe a section that describes somethign difficult that I had to do  
-      Could have lots of text and links in here.
-#+end_src
+ADD AN IMAGE HERE
+#+CAPTION: Org Example Screenshot
+#+NAME: fig:001
+[[./../../img/org-mode-example.png]]
+
 
 This has been working well. Time logging is all in one place. Notes and things stay versioned with my project. And each commit can include an edit to this file with all the relevant information to act as documentation.
 
@@ -40,7 +33,7 @@ When time is a limiting factor /(when isn't it)/ this is a good prioritizing fun
 Anything that is an actionable item in my list of things to do gets those two properties. Then I use an org mode module to make a sorted table of links to those items. I can re-generate and re-score whenever I am looking for the next thing to do.
 
 ** Implementation 
-
 *** Add the package
+    https://orgmode.org/worg/org-contrib/org-collector.html
 *** Set up the document
 *** Do these things
