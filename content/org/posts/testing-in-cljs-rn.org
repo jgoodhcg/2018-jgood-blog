@@ -3,20 +3,26 @@
  :layout :post
  :tags   [test cljs react native expo jest]}
  
-* Initial outline
+* Testing in CLJS React Native with Expo and Jest
   :LOGBOOK:
+  CLOCK: [2019-10-07 Mon 18:52]--[2019-10-07 Mon 19:01] =>  0:09
+  CLOCK: [2019-10-07 Mon 11:00]--[2019-10-07 Mon 11:36] =>  0:36
   CLOCK: [2019-10-06 Sun 17:21]--[2019-10-06 Sun 17:37] =>  0:16
   :END:
 
-** Project context 
-   I've built up this /organic/ project for awhile.
-   It's pretty hairy at this point but I don't want to start over.
-   I need some tests to keep from making regressions.
-   Handlers in /re-frame/ seem like a high value testing target.
-   Skipp to the GOOD PART LINK HERE.
+** Overview
+   I've been working on [[https://github.com/jgoodhcg/time-align-mobile][this]] react native, expo, cljs project for awhile. It's a time tracking app that focuses on planning, recording _and_ keeping track of the difference. It's grown organically and therefore is a bit of a mess.
+
+   One poor quality point was testing. I didn't write any tests. Experiences at my day jobs have shown that testing doubles feature development time. It's worth it at work. But on a side project that I spend 5 - 10 hours a week on it didn't seem like the right choice, at first. Too much of the implementation was experimental, I wasn't proficient with writing tests, and I just really wanted to get something working in my hands as soon as possible.
+
+   Now I have a really early alpha in my hands, and I'm using it day to day. The code base has gotten bigger and I'm starting to see high level design changes needed. But doing any major refactor is terrifying. I did a data schema refactor that touched a lot of the code base to fix some performance problems. Lack of tests made it more daunting than it needed to be.
+
+   So I need to test. The highest value target right now seems to be my handler and subscription functions. There is a lot of logic in there, they are pure functions, and they won't change as much as the visual components.
+  
+** Failed first attempt
+   The *[[][shadow-cljs user guide]* has a ~:node-test~ target. It seemed like the perfect idea. My handlers are pure functions with no direct dependencies on react native libraries. It should be able to run on node. 
    
-** Failed attempt
-   Shadow-cljs target ~:node-test~.
+   There were actually react native dependencies up the import tree (or down because branches to trunk?). One problem I have is that I put all of my javascript imports that need wrapping in one namespace. *[INSERT SCREENSHOT]* If I wanted to use this test target I would continue refactoring to isolate my handler functions from those react native dependencies.
    Didn't work because of react-native dependencies in my deps tree.
    Too much work to isolate the functions I wanted to test. Would have been possible.
    Next time I'll keep this in mind.
@@ -28,10 +34,10 @@
    For some reason ~watch~ and ~compile~ compiled code cause a js heap limit error when running jest.
    Code compiled with ~release~ works.
    But any meaningful compiler options to make the tests better break with different run time errors.
-    
+   
 ** Final state
-  Only compile with ~release~.
-  Use an interpceptor to generate the tests.
-  Verify tests are generated from a working user generated scenario.
-  From now on I will use these tests to catch regressions.
-  Then I will use the interpectors to generate new tests or write them by hand.
+   Only compile with ~release~.
+   Use an interpceptor to generate the tests.
+   Verify tests are generated from a working user generated scenario.
+   From now on I will use these tests to catch regressions.
+   Then I will use the interpectors to generate new tests or write them by hand.
