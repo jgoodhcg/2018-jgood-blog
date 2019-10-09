@@ -5,6 +5,9 @@
  :tags   ["resume" "experience"]}
 
 * Justin Good
+  :LOGBOOK:
+  CLOCK: [2019-10-09 Wed 10:46]--[2019-10-09 Wed 11:03] =>  0:17
+  :END:
 ** Info
 - justin@jgood.io
 - https://jgood.io
@@ -32,10 +35,13 @@
 - Introduced version control to small dev team
 ** Side Projects
 *** Time Align Mobile
-/2018-05-12--present/
+/2018-05-12--present/  
 
-A native app using Expo and React Native, written in Clojurescript (shadow-cljs). 
-This app is an endeavor to deliver a Minimum Viable Product while optimizing for time (/its a little messy/).
+https://github.com/jgoodhcg/time-align-mobile  
+
+A native app using Expo, React Native, and shadow-cljs.
+This is a passion project where I explore visual design and architectural design in an app that I /really/ use.
+
 ** Education
 *** B.S. in Computer Science, Grand Valley State University
 /2012--2015/
@@ -45,10 +51,7 @@ Data driven, immutable, mostly pure functions, and *simple*.
 After [[https://www.infoq.com/presentations/Simple-Made-Easy][simple made easy]] I was curious. 
 Then after [[https://github.com/Day8/re-frame][the re-frame readme]] I was hooked.
 *** Docker 
-Containerized environments are in.
-Reproducible, declarative, ephemeral is where its at. 
-Containerization should be used from development to production.
-I've spent _alot_ of time trying to make it work for development with  mixed results.
+Containerized environments are easier to work with.
 *** Spacemacs
-Slowly realizing my life could run in org mode and emacs.
+Slowly realizing my life could run in org mode.
    
