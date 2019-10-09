@@ -5,6 +5,7 @@
  
 * Testing in CLJS React Native with Expo and Jest
   :LOGBOOK:
+  CLOCK: [2019-10-09 Wed 18:30]--[2019-10-09 Wed 18:40] =>  0:10
   CLOCK: [2019-10-08 Tue 18:09]--[2019-10-08 Tue 18:17] =>  0:08
   CLOCK: [2019-10-07 Mon 18:52]--[2019-10-07 Mon 19:03] =>  0:11
   CLOCK: [2019-10-07 Mon 11:00]--[2019-10-07 Mon 11:36] =>  0:36
@@ -30,17 +31,10 @@
 
    Part of the response I got was a link to someone extending the *[[][reagent template for shadow-cljs]* to add *[[][jest support]*. It took a minute to figure out how to add it to my project. *INSERT LINK TO COMMITS or some visual*. 
 
+   Once added the basic example worked. Then I imported the namespace I wanted to test and converted some of my old ~deftest~ implementations to use jest. *INSERT EXAMPLE HERE*. It failed with a /heap limit error/ *INSERT EXAMPLE HERE*. 
 
-   Using this PR recommended by thheller.
-   The PR example works and so did a basic example in my codebase.
-   Including the namespaces I want to test is what causes some problems.
-   For some reason ~watch~ and ~compile~ compiled code cause a js heap limit error when running jest.
-   Code compiled with ~release~ works.
-   But any meaningful compiler options to make the tests better break with different run time errors.
-   
-** Final state
-   Only compile with ~release~.
-   Use an interpceptor to generate the tests.
-   Verify tests are generated from a working user generated scenario.
-   From now on I will use these tests to catch regressions.
-   Then I will use the interpectors to generate new tests or write them by hand.
+   I still haven't figured out why that happens but there is a workaround. Don't use ~watch~ or ~compile~ to compile the code. Only ~release~ with it's default advanced compilation settings will work. I added an npm script entry to do this and initiate the tests. *INSERT EXAMPLE HERE*. With this I can actually test my code.
+
+   I didn't want to actually write out a test for each handler. So I made an *[[][interceptor]* that wold print out a test while I was using the app. *INSERT EXAMPLE HERE*. This seems like a decent idea. It's sort of the same concept as visual testing, where usage dictates a baseline. This isn't comprehensive but it seemed like the best value per time option. I'm still trying to delivery something.
+  
+   I'll add specific tests for failures as I come across them or change any handlers.
