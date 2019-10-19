@@ -5,6 +5,7 @@
  
 * Testing in CLJS React Native with Expo and Jest
   :LOGBOOK:
+  CLOCK: [2019-10-19 Sat 13:59]--[2019-10-19 Sat 14:17] =>  0:18
   CLOCK: [2019-10-09 Wed 18:30]--[2019-10-09 Wed 18:40] =>  0:10
   CLOCK: [2019-10-08 Tue 18:09]--[2019-10-08 Tue 18:17] =>  0:08
   CLOCK: [2019-10-07 Mon 18:52]--[2019-10-07 Mon 19:03] =>  0:11
@@ -12,29 +13,36 @@
   CLOCK: [2019-10-06 Sun 17:21]--[2019-10-06 Sun 17:37] =>  0:16
   :END:
 
+ 
+** Checklist                                                          :noexport:
+   - [X] Write basic draft
+   - [ ] Edit with Hemingway editor (or diction/style)
+   - [ ] Add links/images
+   - [ ] Post and ask for review
+   
 ** Overview
-   I've been working on [[https://github.com/jgoodhcg/time-align-mobile][this]] react native, expo, cljs project for awhile. It's a time tracking app that focuses on planning, recording _and_ keeping track of the difference. It's grown organically and therefore is a bit of a mess.
+   I've been working on [[https://github.com/jgoodhcg/time-align-mobile][this]] react native, expo, cljs project for awhile. It's a time tracking app that focuses on planning, recording _and_ keeping track of the difference. The code base has grown organically and therefore is a bit of a mess.
 
-   One poor quality point was testing. I didn't write any tests. Experiences at my day jobs have shown that testing doubles feature development time. It's worth it at work. But on a side project that I spend 5 - 10 hours a week on it didn't seem like the right choice, at first. Too much of the implementation was experimental, I wasn't proficient with writing tests, and I just really wanted to get something working in my hands as soon as possible.
+   One poor quality point was testing. I didn't write any tests. Experiences at my day jobs have shown that testing doubles feature development time. It's worth it at work. But on a side project that I spend 5 - 10 hours a week on it didn't seem like the right choice -- at first. Too much of the implementation was experimental, I wasn't proficient with writing tests, and I just really wanted to get something working in my hands as soon as possible.
 
-   Now I have a really early alpha in my hands, and I'm using it day to day. The code base has gotten bigger and I'm starting to see high level design changes needed. But doing any major refactor is terrifying. I did a data schema refactor that touched a lot of the code base to fix some performance problems. Lack of tests made it more daunting than it needed to be.
+   Now I have a really early alpha in my hands, and I'm using it day to day. The code base has gotten bigger and I'm starting to see high level design changes needed. But doing any major refactor is terrifying without tests. I did a data schema refactor that touched a lot of the code base to fix some performance problems. Lack of tests made it more daunting than it needed to be.
 
-   So I need to test. The highest value target right now seems to be my handler and subscription functions. There is a lot of logic in there, they are pure functions, and they won't change as much as the visual components.
+   So I need to test. The highest value target right now seems to be my handler and subscription functions. There is a lot of logic in there, they are pure functions, and they won't change as much as the visual components. Testing them should be straight forward and the value add for having them is relatively high.
   
 ** Failed first attempt
    The *[[][shadow-cljs user guide]* has a ~:node-test~ target. It seemed like the perfect idea. My handlers are pure functions with no direct dependencies on react native libraries. It should be able to run on node. 
    
-   There were actually react native dependencies up the import tree. One problem I have is that I put all of my javascript imports that need wrapping in one namespace. *[INSERT SCREENSHOT]* If I wanted to use this test target I would continue refactoring to isolate my handler functions from those react native dependencies. This will likely be something I come back to.
+   But ... there were actually react native dependencies imported up the chain somewhere. One problem I have is that I put all of my javascript imports that need wrapping in one namespace. *[INSERT SCREENSHOT]* If I wanted to use this test target I would continue refactoring to isolate my handler functions from those react native dependencies. This will likely be something I come back to.
    
 ** Successful attempt with some caveats
-   During my failed first attempt I misdiagnosed the failures I was seeing as a compiler issue. I went to stack over flow to ping the shadow-cljs author. He correctly told me it was my fault. I kind of feel bad for doing this more than once. It also sucks because slack is horrible as an artifact for future people having the same problems.
+   During my failed first attempt I misdiagnosed the failures I was seeing as a compiler issue. I went to stack over flow to message Thomas directly (the shadow-cljs author *ADD LINK HERE*). He correctly told me it was my fault. I kind of feel bad for doing taking hist time more than once when the issue was entirely my problem. It also sucks because slack is horrible as an artifact for future people having the same problems. Let's all stop using synchronous messaging. Github issues and reddit posts are way better artifacts for searching. *ADD LINKS TO BOTH OF THOSE THINGS*
 
    Part of the response I got was a link to someone extending the *[[][reagent template for shadow-cljs]* to add *[[][jest support]*. It took a minute to figure out how to add it to my project. *INSERT LINK TO COMMITS or some visual*. 
 
-   Once added the basic example worked. Then I imported the namespace I wanted to test and converted some of my old ~deftest~ implementations to use jest. *INSERT EXAMPLE HERE*. It failed with a /heap limit error/ *INSERT EXAMPLE HERE*. 
+   The basic example worked. Then I imported the namespace I wanted to test. After converting some of my old ~deftest~ implementations to use jest, *INSERT EXAMPLE HERE* it failed with a /heap limit error/ *INSERT EXAMPLE HERE*. 
 
    I still haven't figured out why that happens but there is a workaround. Don't use ~watch~ or ~compile~ to compile the code. Only ~release~ with it's default advanced compilation settings will work. I added an npm script entry to do this and initiate the tests. *INSERT EXAMPLE HERE*. With this I can actually test my code.
 
-   I didn't want to actually write out a test for each handler. So I made an *[[][interceptor]* that wold print out a test while I was using the app. *INSERT EXAMPLE HERE*. This seems like a decent idea. It's sort of the same concept as visual testing, where usage dictates a baseline. This isn't comprehensive but it seemed like the best value per time option. I'm still trying to delivery something.
-  
-   I'll add specific tests for failures as I come across them or change any handlers.
+   I didn't want to actually write out a test for each handler. So I made an *[[][interceptor]* that wold print out a test while I was using the app. *INSERT EXAMPLE HERE*. This seems like a decent idea. It's sort of the same concept as visual testing, where usage dictates a baseline. This isn't comprehensive but it seemed like the best value per time option. 
+
+   Hopefully from now on I get better about writing tests as I add new functions. Updating tests when I change implementations is also important.
