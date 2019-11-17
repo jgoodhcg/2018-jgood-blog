@@ -5,26 +5,28 @@
  :tags   ["resume" "experience"]}
 
 * Justin Good
-  :LOGBOOK:
-  CLOCK: [2019-10-09 Wed 10:46]--[2019-10-09 Wed 11:03] =>  0:17
-  :END:
 ** Info
-- justin@jgood.io
-- https://jgood.io
+- jgoodhcg@gmail.com
 - https://github.com/jgoodhcg
 - https://www.linkedin.com/in/jgoodhcg
 - Grand Rapids, Michigan
 ** Experience
 *** Full Stack Developer, Gordon Food Service
 /2018-05-14--Present/
-- Implemented ci/cd + git ops with Jenkins, k8s, and github
-- Launched React Native (expo) app with a Kotlin + Spring Boot backend
-- Integrated app with legacy services 
-- Onboarded several developers to the project
+- Played a key role in establishing a dev ops story across 3 teams
+  - Implemented ci/cd + git ops with Jenkins, k8s, and github on several projects
+  - Helped design a robust developer friendly software development life cycle
+- Lead the development of a digital assistant product suite
+  - Included a native application, chatbot, and voice assistant
+  - High amounts of integration with internal company systems and external software services
+  - Made significant improvements to unit testing coverage and code quality control
+  - On-boarded and collaborated with a small tight knit group of developers
+  - Trained and participated in a scaled agile style product development process
 *** Software Dev Contractor, Tek Systems
 /2017-05-11--2018-05-14/
 - Developed green field content management solution for targeted advertising to customers
-- Fixed bugs, added features and modules to a Drupal CMS site for internal company news and communication
+  - Consisted of a Drupal project with an involved custom module for content targeting
+- Performed general maintenance and enhancement on internal company news Drupal site
 *** Web Developer, One Stop Inc
 /2016-02-18--2017-05-19/
 - Created an isolated, reproducible, build script for production and development
@@ -34,24 +36,24 @@
 - Developed CRUD web app for internal use
 - Introduced version control to small dev team
 ** Side Projects
-*** Time Align Mobile
-/2018-05-12--present/  
-
-https://github.com/jgoodhcg/time-align-mobile  
-
-A native app using Expo, React Native, and shadow-cljs.
-This is a passion project where I explore visual design and architectural design in an app that I /really/ use.
-
+*** Time Sink 
+/2018-05-12--present/
+A native app using Expo and React Native, written in Clojurescript (shadow-cljs). 
+Project repo in github: /time-align-mobile/.
 ** Education
 *** B.S. in Computer Science, Grand Valley State University
 /2012--2015/
 ** Favorite Tech
 *** Clojure(script)
-Data driven, immutable, mostly pure functions, and *simple*.
-After [[https://www.infoq.com/presentations/Simple-Made-Easy][simple made easy]] I was curious. 
-Then after [[https://github.com/Day8/re-frame][the re-frame readme]] I was hooked.
-*** Docker 
-Containerized environments are easier to work with.
+Data driven, immutable,  pure functions, and *simple*.
+Clojure has been enjoyable to use for these things:
+- Data visualization
+- Native app development
+- Backend web development
+- One off scripting tasks
+-  Data manipulation for machine learning projects
+*** Containerized environments 
+Containerization and orchestration make managing production environments a better experience.
 *** Spacemacs
-Slowly realizing my life could run in org mode.
+Realizing my life could run in Org Mode and Emacs.
    
