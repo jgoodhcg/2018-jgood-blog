@@ -16,6 +16,7 @@
  
 ** Checklist                                                          :noexport:
    - [X] Write basic draft
+   - [ ] Read Julian Shapiro's writing guide again
    - [ ] Edit with Hemingway editor (or diction/style)
    - [ ] Add links/images
    - [ ] Post and ask for review
