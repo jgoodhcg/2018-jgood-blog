@@ -13,15 +13,15 @@
 ** Experience
 *** Full Stack Developer, Gordon Food Service
 /2018-05-14--Present/
-- Played a key role in establishing a dev ops story across 3 teams
-  - Implemented ci/cd + git ops with Jenkins, k8s, and github on several projects
-  - Helped design a robust developer friendly software development life cycle
 - Lead the development of a digital assistant product suite
   - Included a native application, chatbot, and voice assistant
   - High amounts of integration with internal company systems and external software services
   - Made significant improvements to unit testing coverage and code quality control
   - On-boarded and collaborated with a small tight knit group of developers
   - Trained and participated in a scaled agile style product development process
+- Played a key role in establishing a dev ops story across 3 teams
+  - Implemented ci/cd + git ops with Jenkins, k8s, and github on several projects
+  - Helped design a robust developer friendly software development life cycle
 *** Software Dev Contractor, Tek Systems
 /2017-05-11--2018-05-14/
 - Developed green field content management solution for targeted advertising to customers
@@ -37,9 +37,8 @@
 - Introduced version control to small dev team
 ** Side Projects
 *** Time Sink 
-/2018-05-12--present/
-A native app using Expo and React Native, written in Clojurescript (shadow-cljs). 
-Project repo in github: /time-align-mobile/.
+- A native app using Expo and React Native, written in Clojurescript (shadow-cljs)
+- Project repo in github: /time-align-mobile/
 ** Education
 *** B.S. in Computer Science, Grand Valley State University
 /2012--2015/
