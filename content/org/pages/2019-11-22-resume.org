@@ -13,7 +13,7 @@
 *** Full Stack Developer, Gordon Food Service
     /2018-05-14--Present/
 **** Accomplishments 
-     - Lead the development of a digital assistant product suite
+     - Lead the development of a digital assistant product suite (native app, chatbot, voice assistant)
      - Worked or consulted on a native application, voice assistant, chatbot 
      - Integrated with internal company systems and external software services
      - Improved unit testing coverage and code quality control
