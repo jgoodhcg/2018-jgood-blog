@@ -24,7 +24,7 @@
      - Helped design a robust developer friendly software development life cycle
 **** Technologies (sorted by strength) 
      | Languages  | Frameworks  | Platforms                |
-     |------------+-------------+--------------------------|
+     | --         | --          | --                       |
      | Javascript | Redux       | Expo (React Native)      |
      | Kotlin     | Spring Boot | Google Cloud Platform    |
      | Java       | Angular     | Google Kubernetes Engine |
@@ -38,7 +38,7 @@
      - Trained two non technical staff to be /citizen developers/
 **** Technologies
      | Languages  | Frameworks | Platforms  |
-     |------------+------------+------------|
+     | --         | --         | --         |
      | Javascript | Drupal     | Liquid Web |
      | PHP        |            |            |
      | Bash       |            |            |
@@ -50,7 +50,7 @@
      - Maintained and extended e-commerce php app and supporting applications
 **** Technologies 
      | Languages  | Frameworks             | Platforms |
-     |------------+------------------------+-----------|
+     | --         | --                     | --        |
      | Javascript | Magnus (custom legacy) | Vagrant   |
      | PHP        | Zend                   |           |
      | Bash       |                        |           |
@@ -62,7 +62,7 @@
      - Introduced version control to small dev team
 **** Technologies
      | Languages  | Frameworks | Platforms |
-     |------------+------------+-----------|
+     | --         | --         | --        |
      | Javascript | jQuery     | Vagrant   |
      | PHP        |            |           |
      
@@ -75,7 +75,7 @@
      - Organized with versioned org-mode file
 **** Technologies 
     | Languages     | Frameworks | Platforms           |
-    |---------------+------------+---------------------|
+    | --            | --         | --                  |
     | Clojurescript | Re-frame   | Expo (React Native) |
  
 ** Education
