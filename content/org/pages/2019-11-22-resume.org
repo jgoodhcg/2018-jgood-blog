@@ -1,0 +1,99 @@
+#+OPTIONS: toc:nil num:nil
+{:title  "Resume"
+ :layout :page
+ :navbar? true
+ :tags   ["resume" "experience"]}
+
+* Justin Good
+** Info
+   - jgoodhcg@gmail.com
+   - 1 616 516 2311
+   - https://github.com/jgoodhcg
+   - https://www.linkedin.com/in/jgoodhcg
+   - Grand Rapids, Michigan
+** Experience
+*** Full Stack Developer, Gordon Food Service
+    /2018-05-14--Present/
+**** Accomplishments 
+     - Lead the development of a digital assistant product suite
+     - Worked or consulted on a native application, voice assistant, chatbot 
+     - Integrated with internal company systems and external software services
+     - Improved unit testing coverage and code quality control
+     - Implemented a dev ops process with declarative environments and containerization
+     - Trained and participated in a scaled agile style product development process (SAFe)
+     - Played a key role in establishing dev ops across 3 teams
+     - Implemented continuous integration and deployment in a git ops style on several projects
+     - Helped design a robust developer friendly software development life cycle
+**** Technologies (sorted by strength) 
+     | Languages  | Frameworks  | Platforms                |
+     |------------+-------------+--------------------------|
+     | Javascript | Redux       | Expo (React Native)      |
+     | Kotlin     | Spring Boot | Google Cloud Platform    |
+     | Java       | Angular     | Google Kubernetes Engine |
+     |            |             | Auto ML                  |
+     
+*** Software Dev Contractor, Tek Systems
+    /2017-05-11--2018-05-14/
+**** Accomplishments 
+     - Developed green field content management solution for targeted advertising to customers
+     - Performed general maintenance and enhancement on internal company news site
+     - Trained two non technical staff to be /citizen developers/
+**** Technologies
+     | Languages  | Frameworks | Platforms  |
+     |------------+------------+------------|
+     | Javascript | Drupal     | Liquid Web |
+     | PHP        |            |            |
+     | Bash       |            |            |
+ 
+*** Web Developer, One Stop Inc
+    /2016-02-18--2017-05-19/
+**** Accomplishments 
+     - Created an isolated, reproducible, build script for production and development
+     - Maintained and extended e-commerce php app and supporting applications
+**** Technologies 
+     | Languages  | Frameworks             | Platforms |
+     |------------+------------------------+-----------|
+     | Javascript | Magnus (custom legacy) | Vagrant   |
+     | PHP        | Zend                   |           |
+     | Bash       |                        |           |
+
+*** IT Intern, City of Wyoming
+    /2015-5-19--2015-11-13/
+**** Accomplishments 
+     - Developed CRUD web app for internal use
+     - Introduced version control to small dev team
+**** Technologies
+     | Languages  | Frameworks | Platforms |
+     |------------+------------+-----------|
+     | Javascript | jQuery     | Vagrant   |
+     | PHP        |            |           |
+     
+** Side Projects
+*** Time Sink (time-align-mobile)
+**** Accomplishments 
+     - Built a mobile app I use daily
+     - Designed to Material Design Specification
+     - Defined a minimum lovable product and resisted scope creep
+     - Organized with versioned org-mode file
+**** Technologies 
+    | Languages     | Frameworks | Platforms           |
+    |---------------+------------+---------------------|
+    | Clojurescript | Re-frame   | Expo (React Native) |
+ 
+** Education
+*** B.S. in Computer Science, Grand Valley State University
+    /2012--2015/
+** Favorite Tech
+*** Clojure(script)
+    Data driven, immutable,  pure functions, and *simple*.
+    Clojure has been enjoyable to use for these things:
+    - Data visualization
+    - Native app development
+    - Backend web development
+    - One off scripting tasks
+    -  Data manipulation for machine learning projects
+*** Containerized environments 
+    Containerization and orchestration make managing production environments a better experience.
+*** Spacemacs
+    Realizing my life could run in Org Mode and Emacs.
+   
