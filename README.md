@@ -8,4 +8,6 @@ Change branch to gh_pages
 ```
 lein run
 ```
-Push changes to github
+Move to __public_ dir (which should have a repo pointing to `jgoodhcg.github.io.git`)
+Commit changes
+Push github 
