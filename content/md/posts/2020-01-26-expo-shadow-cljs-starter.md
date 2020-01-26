@@ -13,3 +13,6 @@ This project has an opinionated set of all the necessary dependencies for an exp
 - [CircleCI](https://circleci.com/) setup for unit tests (no expo build or publishing yet)
 - [Dependabot](https://dependabot.com/) for javascript deps
 - A nice [component library](https://callstack.github.io/react-native-paper/getting-started.html) with an example of [toggling dark mode](https://github.com/jgoodhcg/shadow-cljs-expo-starter/blob/master/src/main/new_project_name/app.cljs#L50-L53)
+
+
+![img](./../../img/shadow-cljs-expo-starter-dark-sm.png "App in dark mode")
