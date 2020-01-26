@@ -12,6 +12,7 @@ This project has an opinionated set of all the necessary dependencies for an exp
 - Unit tests for re-frame handlers and subscriptions using shadow-cljs [node tests configuration](https://shadow-cljs.github.io/docs/UsersGuide.html#target-node-test) 
 - [CircleCI](https://circleci.com/) setup for unit tests (no expo build or publishing yet)
 - [Dependabot](https://dependabot.com/) for javascript deps
+- Navigation using [react-native-router-flux](https://github.com/aksonov/react-native-router-flux#react-native-router-v4x------)
 - A nice [component library](https://callstack.github.io/react-native-paper/getting-started.html) with an example of [toggling dark mode](https://github.com/jgoodhcg/shadow-cljs-expo-starter/blob/master/src/main/new_project_name/app.cljs#L50-L53)
 
 
