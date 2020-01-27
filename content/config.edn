@@ -1,7 +1,7 @@
 {:site-title           "JGood"
  :author               "Justin Good"
  :description          "Personal blog"
- :site-url             "jgood.io"
+ :site-url             "https://jgood.io"
  :post-root            "posts"
  :page-root            "pages"
  :post-root-uri        "posts-output"
@@ -27,7 +27,7 @@
  :previews?            false
  :posts-per-page       5
  :blocks-per-preview   2
- :clean-urls           :trailing-slash
+ :clean-urls           :no-trailing-slash
  :collapse-subdirs?    false
  :hide-future-posts?   true
  :klipse               {}
