@@ -1,19 +1,63 @@
 {:title "A template for Expo apps with Shadow CLJS" :layout :post :tags []}
 
-# Summary
+The best path I've seen for web developers, familiar with the React stack, to make a native app is -- Expo. It's an easy transition of technology and a well maintained project. 
 
-This [repo](https://github.com/jgoodhcg/shadow-cljs-expo-starter) is a template for [Expo](https://expo.io/) projects using [Shadow CLJS](https://shadow-cljs.github.io/docs/UsersGuide.html). By cloning this repo and following the starter instructions in the [readme](https://github.com/jgoodhcg/shadow-cljs-expo-starter#new-project-starter) you will be all setup to starting making a cross platform native app using Clojure.
+## Why
 
-# Benefits
+Progressive web apps should be your first consideration though. If your project can fit within [what web can do]() then go for it. Web apps should be a great open standard for mobile solutions. I would love it if  Google and Apple opened their platforms up to web apps. They might if enough popular apps are web apps. 
 
-This project has an opinionated set of all the necessary dependencies for an expo project written in cljs. 
-- Staple libraries [Specter](https://github.com/redplanetlabs/specter), [Spec-tools](https://github.com/metosin/spec-tools), and [Camel-snake-kebab](https://clj-commons.org/camel-snake-kebab/)
-- [Re-frame](https://github.com/day8/re-frame) for state management
-- Unit tests for re-frame handlers and subscriptions using shadow-cljs [node tests configuration](https://shadow-cljs.github.io/docs/UsersGuide.html#target-node-test) 
-- [CircleCI](https://circleci.com/) setup for unit tests (no expo build or publishing yet)
-- [Dependabot](https://dependabot.com/) for javascript deps
-- Navigation using [react-native-router-flux](https://github.com/aksonov/react-native-router-flux#react-native-router-v4x------)
-- A nice [component library](https://callstack.github.io/react-native-paper/getting-started.html) with an example of [toggling dark mode](https://github.com/jgoodhcg/shadow-cljs-expo-starter/blob/master/src/main/new_project_name/app.cljs#L50-L53)
+Sometimes a PWA won't cut it. Device capabilities like push notifications [^] and geofencing are only available to native apps. The stores can also be a marketing boon. When those things are important then the solution is a native app.
+
+An impediment for me are the Android and iOS stacks. [Like a lot of people](), coming from a web background, I'm most familiar with React apps. I don't want to learn two new stacks and write two identical projects in them. Immediately I narrow down to React Native as a solution. From there I add another filter -- Clojure.
+
+Clojure is a great general language. [There]() [are]() a [bunch]() of [reasons]() to use it. There are a few flavors but I've been using ClojureScript (CLJS) the most. It compiles to javascript.
+
+## How
+This post is about how to setup  a native app project that uses Expo and CLJS. To get started I made [a template repository](). It has a selection of opinionated library choices. It's also forked from [the best solution]() I've seen for compiling CLJS for Expo.
+
+### Tools
+Let's start with my system setup. I'm running PopOS, which is almost the same as Ubuntu. [Spacemacs]() is my editor of choice. I use [Cider]() as my editor/CLJS integration. 
+
+To develop an Expo/CLJS project I have these things open the whole time:
+- Browser (for debugging)
+- Terminal for using the Expo command line interface
+- Spacemacs for editing
+- GenyMotion for device emulation
+- GitKraken for a GIT GUI [^]
+
+### Setting up a project
+Clone the repo first.
+```
+```
+Find and replace to add your project name.
+```
+```
+Connect your REPL and start shadow-cljs compilation. The [REPL is one of the most important parts]() of CLJS. 
+```
+```
+![img](./../../img/ "Editor starting up a repl")
+
+Start the Expo bundler.
+```
+```
+![img](./../../img/ "Expo CLI")
+
+Open up Genymotion. 
+Install [the Expo client app]() if you don't have it. This is for development. Expo provides a way to build binaries for iOS and Android platforms.
+
+Open the Expo client and select your app. You may want to create an Expo account and log in to be able to see it as an option.
 
 
-![img](./../../img/shadow-cljs-expo-starter-dark-sm.png "App in dark mode")
+
+
+
+
+
+
+
+
+
+
+
+
+
