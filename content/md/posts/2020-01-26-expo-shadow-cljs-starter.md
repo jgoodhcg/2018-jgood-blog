@@ -1,16 +1,16 @@
 {:title "A template for Expo apps with Shadow CLJS" :layout :post :tags []}
 
-The best path I've seen for web developers, familiar with the React stack, to make a native app is -- Expo. It's an easy technology transition and a well maintained project. 
+The best path I've seen for web developers, familiar with the React stack, to make a native app is -- [Expo](https://expo.io). It's an easy technology transition and a well maintained project. 
 
 ## Why
 
-To be honest, I would prefer if the world ran on webapps. Progressive web apps should be your first consideration though. If your project can fit within [what web can do]() then go for it. Web apps should be a great open standard for mobile solutions. I would love it if  Google and Apple opened their platforms up to web apps. They might if enough popular apps are web apps. 
+To be honest, I would prefer if the world ran on progressive web apps (PWAs).  If your project can fit within [what web can do](https://whatwebcando.today/) then go for it.
 
-Sometimes a PWA won't cut it. Device capabilities like push notifications [^] and geofencing are only available to native apps. The stores can also be a marketing boon. When those things are important then the solution is a native app.
+Sometimes a PWA won't cut it. Device capabilities like push notifications [^] and geofencing are only available to native apps. The stores can also be a marketing boon. 
 
-An impediment for me are the Android and iOS stacks. [Like a lot of people](), coming from a web background, I'm most familiar with React apps. I don't want to learn two new stacks and write two identical projects in them. Immediately I narrow down to React Native as a solution. From there I add another filter -- Clojure.
+My day job needed a native app and so did one of my personal projects.  Geofence ability was an important feature for my personal project. My day job wanted a presence in the app stores and the ability to do push notifications to all users.
 
-Clojure is a great general language. [There]() are a [bunch]() of [reasons]() to use it. There are a few flavors but I've been using ClojureScript (CLJS) the most. It compiles to Javascript.
+For my personal projects I also want to use [Clojure](). Clojure is a great general language. [There]() are a [bunch]() of [reasons]() to use it. There are a few flavors but I've been using ClojureScript (CLJS) the most. It compiles to Javascript.
 
 ## How
 This post is about how to setup  a native app project that uses Expo and CLJS. To get started I made [a template repository](). It has a selection of opinionated library choices. It's also forked from [the best solution]() I've seen for compiling CLJS for Expo.
