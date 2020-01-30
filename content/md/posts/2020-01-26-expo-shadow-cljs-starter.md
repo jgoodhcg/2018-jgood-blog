@@ -6,9 +6,9 @@ Do you want to make a native app? Are you familiar with a React stack? Do you al
 
 To be honest, I would prefer if the world ran on progressive web apps (PWAs).  If your project can fit within [what web can do](https://whatwebcando.today/) then go for it.
 
-However, sometimes a PWA won't cut it. Device capabilities like push notifications [^] and geofencing are only available to native apps. The stores can also be a marketing boon. 
+However, sometimes a PWA won't cut it. Device capabilities like push notifications [^push-notifications] and geofencing are only available to native apps. The stores can also be a marketing boon. 
 
-My day job needed a native app and so did one of my personal projects.  Geofence ability was an important feature for my personal project. My day job wanted a presence in the app stores and the ability to do push notifications to all users on iOS and Android.
+My day job needed a native app and so did one of my personal projects. Geofence ability was an important feature for my personal project. My day job wanted a presence in the app stores and the ability to do push notifications to all users on iOS and Android.
 
 For my personal projects I also _had_ to use [Clojure](https://clojure.org/). Clojure is a great general language. [There](https://clojure.org/about/rationale) are a [bunch](https://youtu.be/BThkk5zv0DE) of [reasons](https://news.ycombinator.com/item?id=20773921) to use it. There are a few flavors but I've been using ClojureScript (CLJS) the most. It compiles to Javascript. If you want to take your first steps with clojure I recommend [these practice problems](http://www.4clojure.com/), and a [few](https://www.braveclojure.com/) general [resources](https://lambdaisland.com/) for [learning](https://sekao.net/lightmod/).
 
@@ -19,11 +19,11 @@ The goal of this post is to get you setup with a native app project that uses Ex
 Let's start with my system setup. I'm running [PopOS](https://system76.com/pop), which is almost the same as Ubuntu. [Spacemacs](https://www.spacemacs.org/) is my editor of choice. I use [Cider](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/clojure) as my editor/CLJS integration.
 
 To develop an Expo/CLJS project I have these things open the whole time:
-- Browser (for debugging)[^]
+- Browser (for [debugging](https://docs.expo.io/versions/latest/workflow/debugging))
 - Terminal for using the [Expo command line interface](https://docs.expo.io/versions/latest/workflow/expo-cli/)
 - Spacemacs for editing
 - [GenyMotion](https://www.genymotion.com/) for device emulation
-- [GitKraken](https://www.gitkraken.com/) for a GIT GUI [^] <--- you don't think you need one but you do footnote.
+- [GitKraken](https://www.gitkraken.com/) for a GIT GUI [^git-gui]
 
 ### Get a running project
 Clone the repo first.
@@ -53,4 +53,11 @@ The demo app will open up.
 
 ![img](./../../img/ "Demo app running")
 
+Disable hot reloading and live reloading through the [dev menu](https://docs.expo.io/versions/latest/workflow/debugging/#developer-menu) because Shadow CLJS already does this.
+
+![img](./../../img/ "Demo app running")
+
 Now go build a CLJS native app! :)
+
+[^push-notifications]: Push notifications are available for Android browsers.
+[^git-gui]: I know, you don't need a gui, you know the command line. Previous git clients suck, yes. But this one is good. Everyone I've gotten to try it, even the most steadfast cli advocates, stick with it. The visual information density is high. That cannot be matched by the cli. The buttons pretty clearly map to cli commands and the client even has a log to show you what every gui action does on the command line. Use this client.
