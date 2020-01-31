@@ -1,13 +1,15 @@
 (ns cryogen.server
-  (:require [compojure.core :refer [GET defroutes]]
-            [compojure.route :as route]
-            [ring.util.response :refer [redirect file-response]]
-            [ring.util.codec :refer [url-decode]]
-            [cryogen-core.watcher :refer [start-watcher!]]
-            [cryogen-core.plugins :refer [load-plugins]]
-            [cryogen-core.compiler :refer [compile-assets-timed]]
-            [cryogen-core.config :refer [resolve-config]]
-            [cryogen-core.io :refer [path]]))
+  (:require 
+   [clojure.string :as string]
+   [compojure.core :refer [GET defroutes]]
+   [compojure.route :as route]
+   [ring.util.response :refer [redirect file-response]]
+   [ring.util.codec :refer [url-decode]]
+   [cryogen-core.watcher :refer [start-watcher!]]
+   [cryogen-core.plugins :refer [load-plugins]]
+   [cryogen-core.compiler :refer [compile-assets-timed]]
+   [cryogen-core.config :refer [resolve-config]]
+   [cryogen-core.io :refer [path]]))
 
 (defn init []
   (load-plugins)
@@ -21,15 +23,24 @@
   (fn [request]
     (let [{:keys [clean-urls blog-prefix public-dest]} (resolve-config)
           req-uri (.substring (url-decode (:uri request)) 1)
-          res-path (condp = clean-urls
-                     :trailing-slash (path req-uri "index.html")
-                     :no-trailing-slash (if (or (= req-uri "")
-                                                (= req-uri "/")
-                                                (= req-uri
-                                                   (.substring blog-prefix 1)))
-                                          (path req-uri "index.html")
-                                          (path (str req-uri ".html")))
-                     :dirty (path (str req-uri ".html")))]
+          res-path (if (or (.endsWith req-uri "/")
+                           (.endsWith req-uri ".html")
+                           (-> (string/split req-uri #"/")
+                               last
+                               (string/includes? ".")
+                               not))
+                     (condp = clean-urls
+                       :trailing-slash (path req-uri "index.html")
+                       :no-trailing-slash (if (or (= req-uri "")
+                                                  (= req-uri "/")
+                                                  (= req-uri
+                                                     (if (string/blank? blog-prefix)
+                                                       blog-prefix
+                                                       (.substring blog-prefix 1))))
+                                            (path req-uri "index.html")
+                                            (path (str req-uri ".html")))
+                       :dirty (path (str req-uri ".html")))
+                     req-uri)]
       (or (file-response res-path {:root public-dest})
           (handler request)))))
 
