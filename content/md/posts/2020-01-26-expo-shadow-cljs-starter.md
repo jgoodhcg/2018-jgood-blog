@@ -30,7 +30,7 @@ Clone the repo first.
 ```
 ```
 
-Connect the Spacemacs REPL and start Shadow-CLJS compilation. The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. 
+Connect the Spacemacs REPL and start Shadow-CLJS compilation. The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. As long as you don't reload the expo client the REPL will work. After reloading I've found that CIDER also has to be restarted.
 ```
 ```
 
@@ -179,8 +179,6 @@ For any app that gets past the _toy_ stage the app-db (state) is going to get _c
 [React Native paper](https://callstack.github.io/react-native-paper/getting-started.html) is an excellent component library. 
 
 Another example this repo provides, although not a library, is unit tests. This is tricky in an Expo project because you will likely want to run unit tests in a ci/cd pipeline. Which means you will probably want a runtime in Node, not a native app running React Native. There are examples of handler and subscription unit tests. They utilize shadow-cljs [node tests configuration](https://shadow-cljs.github.io/docs/UsersGuide.html#target-node-test). Check out `src/test/new_project_name/` for the test files. They use a different build configuration in `shadow-cljs.edn`. 
-
-### The REPL
 
 [^push-notifications]: Push notifications are available for Android browsers.
 [^git-gui]: I know, you don't need a gui, you know the command line. Previous git clients suck, yes. But this one is good. Everyone I've gotten to try it, even the most steadfast cli advocates, stick with it. The visual information density is high. That cannot be matched by the cli. The buttons pretty clearly map to cli commands and the client even has a log to show you what every gui action does on the command line. Use this client.
