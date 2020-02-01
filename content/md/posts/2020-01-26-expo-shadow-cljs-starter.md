@@ -31,7 +31,7 @@ Clone the repo first.
 $ git clone https://github.com/jgoodhcg/shadow-cljs-expo-starter.git
 ```
 
-The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. However, it isn't the repl experience isn't the best with Expo. Reloading the client application breaks the repl connection and the expo cli and cider will have to be restarted. Which happens semi frequently when working with visual stuff -- especially react components.
+The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. However, the REPL experience isn't the best with Expo. Reloading the client application breaks the repl connection and the expo cli and cider will have to be restarted. Which happens semi frequently when working with visual stuff -- especially react components.
  
  This is tolerable for me because I find that the repl is really only needed when I'm doing some experimental thing with state and actions, not visual components. So when I'm working on visual stuff I just don't pay much attention to the repl. When I want to do repl driven development it is normally with some non visual code and errors requiring reload rarely happen.
  
@@ -177,7 +177,7 @@ For any app that gets past the _toy_ stage the app-db (state) is going to get _c
 
 ### CSK
 
-[Camel-snake-kebab](https://clj-commons.org/camel-snake-kebab/) is a nice little convenience. Reagent does a great job of converting component parameters from camel case to snake case for wrapped React components. There are some spots where you will want to use this library to do the same thing. In this example it is for the style sheets. In `src/main/new_project_name/app.cljs` you can see it's use to allow style properties to be referenced in camel case.
+[Camel-snake-kebab](https://clj-commons.org/camel-snake-kebab/) is a nice little convenience. Reagent does a great job of converting component parameters from kebab-case to camelCase for wrapped React components. There are some spots where you will want to use this library to do the same thing. In this example it is for the style sheets. In `src/main/new_project_name/app.cljs` you can see it's use to allow style properties to be referenced in camel case.
 
 ```clojure
 (def styles
