@@ -28,34 +28,42 @@ To develop an Expo/CLJS project I have these things open the whole time:
 ### Get a running project
 Clone the repo first.
 ```
+$ git clone https://github.com/jgoodhcg/shadow-cljs-expo-starter.git
 ```
 
-Connect the Spacemacs REPL and start Shadow-CLJS compilation. The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. As long as you don't reload the expo client the REPL will work. After reloading I've found that CIDER also has to be restarted.
-```
+The [REPL is one of the most important parts](https://dev.to/jr0cket/repl-driven-development-ano) of Clojure. However, it isn't the repl experience isn't the best with Expo. Reloading the client application breaks the repl connection and the expo cli and cider will have to be restarted. Which happens semi frequently when working with visual stuff -- especially react components.
+ 
+ This is tolerable for me because I find that the repl is really only needed when I'm doing some experimental thing with state and actions, not visual components. So when I'm working on visual stuff I just don't pay much attention to the repl. When I want to do repl driven development it is normally with some non visual code and errors requiring reload rarely happen.
+ 
+I normally start my project through the cider function `cider-jack-in-cljs` in the Clojure Spacemacs layer. It is too involved to go into depth here, and you probably don't want to use emacs anyway. So I urge you to explore integrating with the repl at some point in your native app development.
+
+For this setup let's just use the command line to start Shadow compilation and Expo Javascript bundling. From the README:
+```bash
+  # Install all deps
+$ yarn
+  # Start shadow-cljs
+$ shadow-cljs watch app
+  # Wait for first compile to finish or expo gets confused
+  # (In another terminal) Start expo
+$ yarn start
 ```
 
-![img](./../../img/ "Editor starting up a repl")
-
-
-Start the Expo bundler.
-```
-```
-![img](./../../img/ "Expo CLI")
+![img](./../../img/expo-shadow-cljs-starter/cli-start.png "Starting expo and shadow-cljs")
 
 Open up Genymotion. 
 Install [the Expo client app](https://expo.io/tools#client) if you don't have it. This client app is only for development. Expo provides a way to [build binaries](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/) for iOS and Android platforms.
 
 Open the Expo client and select your app. You may want to create an Expo account and log in to be able to see it as an option.
 
-![img](./../../img/ "Expo client app project selection")
+![img](./../../img/expo-shadow-cljs-starter/genymotion-expo-client.png "Expo client app project selection")
 
 The demo app will open up.
 
-![img](./../../img/ "Demo app running")
+![img](./../../img/expo-shadow-cljs-starter/app.png "Demo app running")
 
 Disable hot reloading and live reloading through the [dev menu](https://docs.expo.io/versions/latest/workflow/debugging/#developer-menu) because Shadow CLJS already does this.
 
-![img](./../../img/ "Demo app running")
+![img](./../../img/expo-shadow-cljs-starter/disable-reload.png "Developer menu in app")
 
 ## Opinions
 
