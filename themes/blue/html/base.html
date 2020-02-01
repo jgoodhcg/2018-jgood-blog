@@ -37,8 +37,8 @@
                 {% if archives %} class="active" {% endif %}><a href="{{archives-uri}}">Archives</a></li>
                 {% for nav-page in navbar-pages %}
                 <li
-                {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
-                <a href="{{nav-page.uri}}">{{nav-page.title}}</a>
+                {% ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
+                  <a href="{{nav-page.uri}}">{{nav-page.title}}</a>
                 </li>
                 {% endfor %}
                 <li><a href="{{rss-uri}}">RSS</a></li>
@@ -63,11 +63,21 @@
             <div id="sidebar">
                 <h3>Links</h3>
                 <ul id="links">
-                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
-                    <li><a href="https://carmen.la/blog/archives/">Carmen's Blog</a></li>
-                    {% for page in sidebar-pages %}
-                    <li><a href="{{page.uri}}">{{page.title}}</a></li>
-                    {% endfor %}
+                  <li>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <a href="https://www.linkedin.com/in/jgoodhcg/">Linked In</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <a href="https://github.com/jgoodhcg">Github</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <a href="https://twitter.com/jgoodhcg">Twitter</a>
+                  </li>
+                  {% for page in sidebar-pages %}
+                  <li><a href="{{page.uri}}">{{page.title}}</a></li>
+                  {% endfor %}
                 </ul>
                 {% if latest-posts|not-empty %}
                 <div id="recent">
