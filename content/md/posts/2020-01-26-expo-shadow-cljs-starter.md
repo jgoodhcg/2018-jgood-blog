@@ -1,4 +1,4 @@
-{:title "A template for Expo apps with Shadow CLJS" :layout :post :tags []}
+{:title "A template for Expo apps with Shadow CLJS" :layout :post :tags ["expo" "cljs" "shadow-cljs"]}
 
 Do you want to make a native app? Are you familiar with a React stack? Do you also want to write in Clojure? Then the solution is -- [Expo](https://expo.io) with [Shadow CLJS](https://shadow-cljs.github.io/docs/UsersGuide.html). It's an easy technology transition and a well maintained platform to build on. I've used Expo with plain Javascript at my day job for a couple of years. My most significant personal project is an Expo app written in CLJS
 
