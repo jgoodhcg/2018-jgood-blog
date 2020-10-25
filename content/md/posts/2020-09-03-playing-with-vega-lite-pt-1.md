@@ -2,18 +2,18 @@
 
 I'm obsessive about tracking personal metrics, and I want to make data visualizations. This is an initial attempt at exploring my own data, and [Vega-Lite](https://vega.github.io/vega-lite/) as a tool to visualize it. I'm using [Oz](https://github.com/metasoarous/oz) as a Vega-Lite wrapper because the setup was _easy_.
 
-# Final product
+## Final product
 ![img](./../../img/playing-with-vega-lite/pt-1.png "Final product")
 
 I'm not sure why February is missing. I think there was something weird about data exports in those months and the data dropped in processing.  
 
 [Source code for this post](https://github.com/jgoodhcg/playground/blob/b752b1db752f8412b6f834070451150c44efa7f2/src/fat_secret.clj)
 
-# Data
+## Data
 
 A few years ago I used Myfitnesspal. I found out after a year of tracking that it only had aggregate meal time macros in its export. I switched to Fat Secret for that reason. It turns out that Fat Secret has more precise data but it is difficult to parse. I've since moved on to [Cronometer](https://cronometer.com/?utm_source=jgood-blog&utm_medium=vega-lite-pt-1-post&utm_campaign=justin-showing-up-in-your-analytics). It's data export is a perfectly parsable csv. However, I have over a year's worth of daily nutritional info in Fat Secret so this post is about getting that into a graph.
 
-## Example of an export _csv_ document from Fat Secret:
+### Example of an export _csv_ document from Fat Secret:
 
 ```
 #-------------------------------------------
@@ -109,10 +109,10 @@ The measurement above shows `"`'s wrapping, an `x` to indicate quantity of measu
 After the last meal item of Breakfast there will be the next meal heading for Lunch. The same happens for meal headings and days.
 
 
-## Transformation
+### Transformation
 When considering how to parse this I found two things that looked promising. The first was [from juxt](https://juxt.pro/blog/parsing-with-clojure-spec) and used `spec`. The second was [Instaparse](https://github.com/Engelberg/instaparse), based on `context free grammars`. I went with spec 🤷. In hindsight I should have taken the time to learn Instaparse. 
 
-### Making a spec for each type of heading
+#### Making a spec for each type of heading
 
 ```clojure
 (ns fat-secret
@@ -169,7 +169,7 @@ When considering how to parse this I found two things that looked promising. The
 ```
 These specs all use `s/cat` to take a collection of values and turn them into a keyed map. The `s/?` in each keyed predicate means that it matches zero or 1. In practice this means that when the spec finds a value for that key it moves on to the next key.
 
-### Getting the files ready for processing
+#### Getting the files ready for processing
 
 ```clojure
 (def files (->> "/absolute/path/to/files"
@@ -184,7 +184,7 @@ These specs all use `s/cat` to take a collection of values and turn them into a 
 
 This snippet iterates over everything in a directory, checking that it is a file, converting it's path to a string, and then looking for a specific file format. The result is a collection of absolute file paths as strings.
 
-### Turning the file paths into a piece of data to process
+#### Turning the file paths into a piece of data to process
 
 ```clojure
 (defn load-lines [file]
@@ -200,7 +200,7 @@ This snippet iterates over everything in a directory, checking that it is a file
 
 This snippet takes the collection of file paths and maps over them with a reader that puts all of their lines into a collection. Those collections load into another collection. The result is a nested collection of every line in all the files. `flatten` turns it into a single collection of every line in all the files.
 
-### Transforming the lines
+#### Transforming the lines
 
 ```clojure
 (defn transform-lines [lines]
@@ -322,7 +322,7 @@ The `reset!` remembers the last found meal during parsing. That way when the nex
 
 `sp/transform` is a [specter](https://github.com/redplanetlabs/specter) function that uses the path to update a piece of nested data. You can see the use of `prev-meal-keyword` from the atom to find the right meal to place the meal item under. The day is easy to know without any state from the atom because it is always the _last_ day.
 
-### Visualization
+## Visualization
 
 Visualizing with Vega-Lite is all declarative.
 
